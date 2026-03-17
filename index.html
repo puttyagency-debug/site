@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Моя візитка</title>
+  <meta name="description" content="Сайт-візитка + анкета" />
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; background:#0b0f1a; color:#e8ecf1; }
+    .wrap { max-width: 900px; margin: 0 auto; padding: 32px 18px 56px; }
+    .card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.10); border-radius: 16px; padding: 22px; }
+    h1 { margin: 0 0 8px; font-size: 30px; }
+    p { line-height: 1.6; margin: 10px 0; color: rgba(232,236,241,0.9); }
+    .row { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 18px; }
+    .btns { display:flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+    a.btn { display:inline-block; padding: 10px 14px; border-radius: 12px; text-decoration:none; color:#0b0f1a; background:#d6ff7f; font-weight: 700; }
+    a.btn.secondary { background: rgba(214,255,127,0.18); color:#e8ecf1; border:1px solid rgba(214,255,127,0.35); }
+    .iframeWrap { border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.10); background: rgba(0,0,0,0.25); }
+    iframe { width:100%; height: 720px; border: 0; }
+    footer { margin-top: 18px; font-size: 13px; color: rgba(232,236,241,0.65); }
+    @media (min-width: 860px) {
+      .row { grid-template-columns: 1.1fr 0.9fr; align-items: start; }
+      iframe { height: 760px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>Привіт! Я [Твоє ім’я]</h1>
+      <p>
+        Я займаюсь [що робиш: DevOps/MLOps / консультації / проєкти]. Тут коротко про мене і форма, щоб залишити заявку.
+      </p>
+
+      <div class="btns">
+        <a class="btn" href="#form">Заповнити анкету</a>
+        <a class="btn secondary" href="mailto:you@example.com">Email</a>
+        <a class="btn secondary" href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="btn secondary" href="https://github.com/yourusername" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </div>
+
+    <div class="row" id="form">
+      <div class="card">
+        <h2 style="margin:0 0 8px;">Про співпрацю</h2>
+        <p style="margin-top:0;">
+          Заповни анкету — і я повернуся з відповіддю. Якщо не любиш форми (є такі люди 😄) — можна написати на email.
+        </p>
+        <p><b>Що можна вказати:</b> контакти, компанію/проєкт, короткий опис задачі, дедлайн.</p>
+      </div>
+
+      <div class="iframeWrap">
+        <!-- ВСТАВ СЮДИ свій Google Form embed URL -->
+        <iframe
+          src="src="https://docs.google.com/forms/d/e/1FAIpQLSdVCWkd0fahysFz-cckdHbSpJFCVIE1lcvSjbr7Y583NMe1Mw/viewform?embedded"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Анкета (Google Form)">
+        </iframe>
+      </div>
+    </div>
+
+    <footer>
+      © <span id="y"></span> [Твоє ім’я]. Зроблено на GitHub Pages.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
